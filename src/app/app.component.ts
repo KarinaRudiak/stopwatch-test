@@ -14,7 +14,7 @@ export class AppComponent {
   isRunning = false;
 
 
-  startTimer(){
+  startTimer(): void{
     if (!this.isRunning) {
       this.interval = setInterval(() => {
         this.timer.setSeconds(this.timer.getSeconds() + 1)
@@ -27,14 +27,14 @@ export class AppComponent {
     this.isRunning = !this.isRunning;
   }
 
-  pauseTimer() {
+  pauseTimer(): void {
     if (this.isRunning) {
       clearInterval(this.interval);
       this.isRunning = !this.isRunning;
     }
   }
 
-  resetTimer() {
+  resetTimer(): void {
     this.timer.setTime(0);
   }
 }
